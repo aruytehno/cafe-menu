@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %} Menu {% endblock title%}
+{% block content %}
+<main id="main">
+   <!-- ======= Menu Section ======= -->
+   <section id="menu" class="menu section-bg">
+      <div class="container" data-aos="fade-up">
+         <div class="section-title" style="margin-top: 75px">
+            <h2>Меню</h2>
+            <p>Check Our Tasty Menu</p>
+         </div>
+         <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex justify-content-center">
+               <ul id="menu-flters">
+                  <li data-filter="*" class="filter-active">All</li>{% for category in categories %}
+                  <li data-filter=".filter-{{ category }}">{{ category }}</li>{% endfor %}
+               </ul>
+            </div>
+         </div>
+         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">{% for category in categories %}
+            <div class="col-lg-6 menu-item filter-{{ category }}">
+               <div class="menu-sections">
+                  <h2>{{ category }}</h2>
+               </div>
+            </div>{% for product in products %}{% if product.item_category == category %}
+            <div class="col-lg-6 menu-item filter-{{ product.item_category }}">
+               <div class="menu-content">
+                  <a>{{ product.item_name }}</a><span>{{ product.item_price }} ₽</span>
+               </div>{% if product.item_ingredients != '' %}
+               <div class="menu-ingredients">
+                  {{ product.item_ingredients }}
+               </div>{% endif %}{% if product.item_mass != '' %}
+               <div class="menu-size">
+                  {{ product.item_mass }}
+               </div>{% endif %}
+            </div>{% endif %}{% endfor %}{% endfor %}
+         </div>
+      </div>
+   </section><!-- End Menu Section -->
+</main><!-- End #main -->{% endblock content %}
