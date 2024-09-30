@@ -33,6 +33,9 @@
                     {% for product in products %}
                         {% if product.item_category == category %}
                             <div class="col-lg-6 menu-item isotope-item filter-{{ product.item_category }}">
+                                {% if product.item_image %}
+                                    <img src="{{ product.item_image.url }}" alt="{{ product.item_name }}" class="menu-img">
+                                {% endif %}
                                 <div class="menu-content">
                                     <a>{{ product.item_name }}</a><span>{{ product.item_price }} ₽</span>
                                 </div>

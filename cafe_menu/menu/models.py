@@ -1,7 +1,4 @@
-from random import choices
-
 from django.db import models
-
 
 class Product(models.Model):
     item_category = models.CharField(max_length=50, verbose_name='Категория')
@@ -10,10 +7,11 @@ class Product(models.Model):
     item_mass = models.CharField(max_length=50, verbose_name='Масса/объём', blank=True)
     item_price = models.IntegerField(verbose_name='Цена')
     item_in_stock = models.BooleanField(verbose_name='В наличии')
+    item_image = models.ImageField(upload_to='products/', verbose_name='Изображение товара', blank=True, null=True)
 
     class Meta:
-        verbose_name = u'товар'
-        verbose_name_plural = u'Товары'
+        verbose_name = 'товар'
+        verbose_name_plural = 'Товары'
 
     def __str__(self):
         return self.item_name
