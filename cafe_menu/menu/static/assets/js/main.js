@@ -12,12 +12,31 @@
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
-  function toggleScrolled() {
+function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
+
+    // Проверка, находимся ли мы на странице меню
+    if (window.location.pathname.includes('/menu/')) {
+        // Добавляем класс 'scrolled' сразу, если он еще не добавлен
+        selectBody.classList.add('scrolled');
+        return; // Завершаем выполнение функции
+    }
+
+    // Обычная логика для других страниц
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+
+    // Для остальных страниц: добавляем или удаляем класс в зависимости от прокрутки
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-  }
+}
+
+// Добавление обработчика события прокрутки
+window.addEventListener('scroll', toggleScrolled);
+
+// Сразу вызываем функцию, чтобы применить изменения на странице меню
+toggleScrolled();
+
+
 
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
