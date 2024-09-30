@@ -6,7 +6,6 @@
     <!-- Menu Section -->
     <section id="menu" class="menu section">
         <div class="container section-title" data-aos="fade-up">
-<!--            <h2>Menu</h2>-->
             <div><span>Check Our Tasty</span> <span class="description-title">Menu</span></div>
         </div><!-- End Section Title -->
 
@@ -24,7 +23,7 @@
 
             <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200">
                 {% for category in categories %}
-                    <div class="col-lg-6 menu-item isotope-item filter-{{ category }}">
+                    <div class="col-12 menu-item isotope-item filter-{{ category }}">
                         <div class="menu-sections">
                             <h2>{{ category }}</h2>
                         </div>
@@ -32,7 +31,7 @@
 
                     {% for product in products %}
                         {% if product.item_category == category %}
-                            <div class="col-lg-6 menu-item isotope-item filter-{{ product.item_category }}">
+                            <div class="col-12 menu-item isotope-item filter-{{ product.item_category }}">
                                 {% if product.item_image %}
                                     <img src="{{ product.item_image.url }}" alt="{{ product.item_name }}" class="menu-img">
                                 {% endif %}
