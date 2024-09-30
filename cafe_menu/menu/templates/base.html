@@ -54,7 +54,7 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="{% url 'home' %}#hero" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <!-- <img src="assets/img/logo.png" alt=""> -->
           <h1 class="sitename">Delicious</h1>
@@ -63,7 +63,7 @@
         <nav id="navmenu" class="navmenu">
           <ul>
         <li><a href="{% url 'home' %}#hero" class="{% if request.path == '/home/' %}active{% endif %}">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="{% url 'home' %}#about">About</a></li>
         <li><a href="{% url 'menu' %}" class="{% if request.path == '/menu/' %}active{% endif %}">Menu</a></li>
             <li><a href="{% url 'home' %}#specials">Specials</a></li>
             <li><a href="{% url 'home' %}#events">Events</a></li>
