@@ -47,7 +47,7 @@ python manage.py migrate
 
 8. Загрузите данные в базу:
 ```bash
-python manage.py loaddata data.json
+python manage.py loaddata menu.json
 ```
 
 9. Создайте суперпользователя (если необходимо использовать админ-панель):
