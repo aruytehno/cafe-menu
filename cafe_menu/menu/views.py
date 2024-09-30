@@ -4,7 +4,7 @@ from .models import Product
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'menu/home.html')
 
 
 def menu(request):
@@ -14,4 +14,4 @@ def menu(request):
         list_categories.append(product.item_category)
     list_categories = [i for n, i in enumerate(list_categories) if i not in list_categories[:n]]
     data = {"products": products, "categories": list_categories}
-    return render(request, 'menu.html', context=data)
+    return render(request, 'menu/menu.html', context=data)

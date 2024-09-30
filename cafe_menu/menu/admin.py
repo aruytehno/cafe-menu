@@ -1,5 +1,8 @@
 from django.contrib import admin
 
+from cafe_menu.menu.models import Product
+
+
 # Register your models here.
 
 
