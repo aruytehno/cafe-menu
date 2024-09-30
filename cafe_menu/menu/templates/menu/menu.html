@@ -1,45 +1,57 @@
 {% extends 'base.html' %}
-{% block title %} Menu {% endblock title%}
+{% block title %} Menu {% endblock title %}
+
 {% block content %}
 <main id="main">
     <!-- Menu Section -->
     <section id="menu" class="menu section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Menu</h2>
-        <div><span>Check Our Tasty</span> <span class="description-title">Menu</span></div>
-      </div><!-- End Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Menu</h2>
+            <div><span>Check Our Tasty</span> <span class="description-title">Menu</span></div>
+        </div><!-- End Section Title -->
 
-      <div class="container isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <div class="container isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul class="menu-filters isotope-filters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        {% for category in categories %}
+                            <li data-filter=".filter-{{ category }}">{{ category }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div><!-- Menu Filters -->
 
-         <div class="row" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-12 d-flex justify-content-center">
-               <ul class="menu-filters isotope-filters">
-                  <li data-filter="*" class="filter-active">All</li>{% for category in categories %}
-                  <li data-filter=".filter-{{ category }}">{{ category }}</li>{% endfor %}
-               </ul>
+            <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200">
+                {% for category in categories %}
+                    <div class="col-lg-6 menu-item isotope-item filter-{{ category }}">
+                        <div class="menu-sections">
+                            <h2>{{ category }}</h2>
+                        </div>
+                    </div>
+
+                    {% for product in products %}
+                        {% if product.item_category == category %}
+                            <div class="col-lg-6 menu-item isotope-item filter-{{ product.item_category }}">
+                                <div class="menu-content">
+                                    <a>{{ product.item_name }}</a><span>{{ product.item_price }} ₽</span>
+                                </div>
+                                {% if product.item_ingredients != '' %}
+                                    <div class="menu-ingredients">
+                                        {{ product.item_ingredients }}
+                                    </div>
+                                {% endif %}
+                                {% if product.item_mass != '' %}
+                                    <div class="menu-size">
+                                        {{ product.item_mass }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
             </div>
-         </div><!-- Menu Filters -->
-
-         <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200">{% for category in categories %}
-
-            <div class="col-lg-6 menu-item isotope-item filter-{{ category }}">
-               <div class="menu-sections">
-                  <h2>{{ category }}</h2>
-               </div>
-            </div>{% for product in products %}{% if product.item_category == category %}
-
-            <div class="col-lg-6 menu-item isotope-item filter-{{ product.item_category }}">
-               <div class="menu-content">
-                  <a>{{ product.item_name }}</a><span>{{ product.item_price }} ₽</span>
-               </div>{% if product.item_ingredients != '' %}
-               <div class="menu-ingredients">
-                  {{ product.item_ingredients }}
-               </div>{% endif %}{% if product.item_mass != '' %}
-               <div class="menu-size">
-                  {{ product.item_mass }}
-               </div>{% endif %}
-            </div>{% endif %}{% endfor %}{% endfor %}
-         </div>
-      </div>
-   </section><!-- End Menu Section -->
-</main><!-- End #main -->{% endblock content %}
+        </div>
+    </section><!-- End Menu Section -->
+</main><!-- End #main -->
+{% endblock content %}
