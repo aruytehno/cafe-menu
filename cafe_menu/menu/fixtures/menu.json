@@ -1,0 +1,110 @@
+[
+    {
+        "model": "menu.product",
+        "pk": 1,
+        "fields": {
+            "item_category": "Starters",
+            "item_name": "Lobster Bisque",
+            "item_ingredients": "Lorem, deren, trataro, filede, nerada",
+            "item_mass": "300g",
+            "item_price": 595,
+            "item_in_stock": true
+        }
+    },
+    {
+        "model": "menu.product",
+        "pk": 2,
+        "fields": {
+            "item_category": "Specialty",
+            "item_name": "Bread Barrel",
+            "item_ingredients": "Lorem, deren, trataro, filede, nerada",
+            "item_mass": "250g",
+            "item_price": 695,
+            "item_in_stock": true
+        }
+    },
+    {
+        "model": "menu.product",
+        "pk": 3,
+        "fields": {
+            "item_category": "Starters",
+            "item_name": "Crab Cake",
+            "item_ingredients": "A delicate crab cake served on a toasted roll with lettuce and tartar sauce",
+            "item_mass": "200g",
+            "item_price": 795,
+            "item_in_stock": true
+        }
+    },
+    {
+        "model": "menu.product",
+        "pk": 4,
+        "fields": {
+            "item_category": "Salads",
+            "item_name": "Caesar Selections",
+            "item_ingredients": "Lorem, deren, trataro, filede, nerada",
+            "item_mass": "150g",
+            "item_price": 895,
+            "item_in_stock": true
+        }
+    },
+    {
+        "model": "menu.product",
+        "pk": 5,
+        "fields": {
+            "item_category": "Specialty",
+            "item_name": "Tuscan Grilled",
+            "item_ingredients": "Grilled chicken with provolone, artichoke hearts, and roasted red pesto",
+            "item_mass": "350g",
+            "item_price": 995,
+            "item_in_stock": true
+        }
+    },
+    {
+        "model": "menu.product",
+        "pk": 6,
+        "fields": {
+            "item_category": "Starters",
+            "item_name": "Mozzarella Stick",
+            "item_ingredients": "Lorem, deren, trataro, filede, nerada",
+            "item_mass": "200g",
+            "item_price": 495,
+            "item_in_stock": true
+        }
+    },
+    {
+        "model": "menu.product",
+        "pk": 7,
+        "fields": {
+            "item_category": "Salads",
+            "item_name": "Greek Salad",
+            "item_ingredients": "Fresh spinach, crisp romaine, tomatoes, and Greek olives",
+            "item_mass": "300g",
+            "item_price": 995,
+            "item_in_stock": true
+        }
+    },
+    {
+        "model": "menu.product",
+        "pk": 8,
+        "fields": {
+            "item_category": "Salads",
+            "item_name": "Spinach Salad",
+            "item_ingredients": "Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette",
+            "item_mass": "300g",
+            "item_price": 995,
+            "item_in_stock": true
+        }
+    },
+    {
+        "model": "menu.product",
+        "pk": 9,
+        "fields": {
+            "item_category": "Specialty",
+            "item_name": "Lobster Roll",
+            "item_ingredients": "Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll",
+            "item_mass": "400g",
+            "item_price": 1295,
+            "item_in_stock": true
+        }
+    }
+]
