@@ -59,3 +59,15 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
+
+
+## Полезности:
+#### Регулярки для обрамления ссылок в проекте
+###### В поле "Найти" вставьте регулярное выражение:
+```txt
+assets/img/([^'\s]+\.jpg)
+```
+###### В поле "Заменить на" вставьте:
+```txt
+{% static 'assets/img/$1' %}
+```
