@@ -10,6 +10,15 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
+
+/* Castom */
+
+.menu-main {
+    padding-top: 100px; /* Установите необходимый отступ сверху */
+    padding-bottom: 100px; /* Установите необходимый отступ снизу */
+}
+
+
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

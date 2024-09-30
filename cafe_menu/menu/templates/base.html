@@ -62,13 +62,13 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="{% url 'home' %}#hero" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="{% url 'menu' %}">Menu</a></li>
-            <li><a href="#specials">Specials</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#chefs">Chefs</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+        <li><a href="{% url 'home' %}#hero" class="{% if request.path == '/home/' %}active{% endif %}">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="{% url 'menu' %}" class="{% if request.path == '/menu/' %}active{% endif %}">Menu</a></li>
+            <li><a href="{% url 'home' %}#specials">Specials</a></li>
+            <li><a href="{% url 'home' %}#events">Events</a></li>
+            <li><a href="{% url 'home' %}#chefs">Chefs</a></li>
+            <li><a href="{% url 'home' %}#gallery">Gallery</a></li>
             <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="#">Dropdown 1</a></li>
